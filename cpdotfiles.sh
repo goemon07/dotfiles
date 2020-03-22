@@ -5,6 +5,7 @@ DIR="$HOME/dotfiles"
 
 cp $HOME/.config/i3/* $DIR/.config/i3/
 cp $HOME/.config/i3status/* $DIR/.config/i3status/
+cp $HOME/.config/terminator/* $DIR/.config/terminator/
 cp $HOME/.config/rofi/* $DIR/.config/rofi/
 cp $HOME/.config/compton.conf $DIR/.config/
 cp $HOME/.zshrc $DIR/
