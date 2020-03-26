@@ -54,8 +54,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # lock screen
-#bindsym $mod+l exec gdmflexiserver
-bindsym $mod+l exec dm-tool lock
+bindsym $mod+l exec dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+# bindsym $mod+l exec dm-tool lock
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
@@ -217,7 +217,7 @@ for_window [class="Chromium" instance="chat.google.com"] floating enable
 bindsym $mod+c exec googlechat
 for_window [class="Chromium" instance="chat.google.com"] border pixel 1
 
-exec --no-startup-id feh --bg-fill --randomize /home/goemon/MEGAsync/wallpapers
+# exec --no-startup-id feh --bg-fill --randomize /home/goemon/MEGAsync/wallpapers
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec_always --no-startup-id gnome-power-manager
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

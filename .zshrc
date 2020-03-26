@@ -95,11 +95,12 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="vim ~/.zshrc; source ~/.zshrc"
 alias l='ls -lah --color=auto'
-alias i3-config='vim $HOME/.config/i3/config'
+alias i3config='vim $HOME/.config/i3/config'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="$HOME/dotfiles:$HOME/bin/tools:$HOME/.local/bin:$PATH"
+export MFA_ARN="arn:aws:iam::802233477403:mfa/gabriele.orazi"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
