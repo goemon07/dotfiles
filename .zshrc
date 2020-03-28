@@ -101,6 +101,7 @@ alias i3config='vim $HOME/.config/i3/config'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="$HOME/dotfiles:$HOME/bin/tools:$HOME/.local/bin:$PATH"
 export MFA_ARN="arn:aws:iam::802233477403:mfa/gabriele.orazi"
+export TERMINAL="terminator"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
