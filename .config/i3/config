@@ -209,14 +209,18 @@ client.focused_inactive #333333 #333333 #888888 #333333 #333333
 client.unfocused #333333 #333333 #888888 #333333 #333333
 client.urgent #eb709b #eb709b #ffffff #eb709b #eb709b
 
+# NOTE: Use i3-get-window-criteria script to find class/instance/title
 for_window [class="TelegramDesktop"] floating enable
 bindsym $mod+t exec telegram-desktop
 for_window [class="TelegramDesktop"] border pixel 1
 
-
 for_window [class="Chromium" instance="chat.google.com"] floating enable
 bindsym $mod+c exec googlechat
 for_window [class="Chromium" instance="chat.google.com"] border pixel 1
+
+# bindsym $mod+c exec firefox -new-window chat.google.com
+# for_window [class="firefox" instance="Navigator" title="Chat - Mozilla Firefox"] floating enable
+# for_window [class="firefox" instance="Navigator" title="Chat - Mozilla Firefox"] border pixel 1
 
 # exec --no-startup-id feh --bg-fill --randomize /home/goemon/MEGAsync/wallpapers
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
