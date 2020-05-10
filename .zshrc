@@ -98,6 +98,7 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="vim ~/.zshrc; source ~/.zshrc"
 alias l='ls -lah --color=auto'
 alias i3config='vim $HOME/.config/i3/config'
+alias vim=nvim
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="$HOME/dotfiles:$HOME/bin/tools:$HOME/.local/bin:$PATH"
 export MFA_ARN="arn:aws:iam::802233477403:mfa/gabriele.orazi"
