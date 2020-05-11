@@ -3,14 +3,21 @@
 DIR="$HOME/dotfiles"
 #HOST="t490s"
 
-cp $DIR/.config/i3/* $HOME/.config/i3/
-cp $DIR/.config/i3status/* $HOME/.config/i3status/
-cp $DIR/.config/ranger/* $HOME/.config/ranger/
-cp $DIR/.config/nvim/init.vim $HOME/.config/nvim/
-cp $DIR/.config/terminator/* $HOME/.config/terminator/
-cp $DIR/.config/rofi/* $HOME/.config/rofi/
-cp $DIR/.config/compton.conf $HOME/.config/
-cp $DIR/.zshrc $HOME/
-cp $DIR/.bashrc $HOME/
+input="$DIR/paths"
+while read line; do
+    if [[ ! -z "${line// }" ]]; then
+        if [[ -f "$DIR$line" ]]; then
+            if [[ ! -d "$HOME${line%/*}" ]]; then mkdir $HOME${line%/*}; fi
+            cp $DIR$line $HOME${line%/*}
+            echo "OK: $line file imported."
+        elif [[ -d "$DIR$line" ]]; then
+            if [[ ! -d "$HOME$line" ]]; then mkdir $HOME$line; fi
+            cp $DIR$line/* $HOME$line
+            echo "OK: $line folder imported."
+        else
+            echo "FAIL: $line skipped. No such file or directory."
+        fi
+    fi
+done < $input
 
 echo "Done."
