@@ -1,0 +1,9 @@
+/.config/i3/
+/.config/i3status/
+/.config/ranger/
+/.config/nvim/init.vim
+/.config/terminator/
+/.config/rofi/
+/.config/compton.conf
+/.zshrc
+/.bashrc
