@@ -1,18 +1,18 @@
 #!/bin/bash
 
-DIR="$HOME/dotfiles"
-#HOST="t490s"
+BASE_DIR="$HOME/dotfiles/"
+CONFIG_DIR="$BASE_DIR/configs"
 
-input="$DIR/paths"
+input="$BASE_DIR/paths"
 while read line; do
     if [[ ! -z "${line// }" ]]; then
-        if [[ -f "$DIR$line" ]]; then
+        if [[ -f "$CONFIG_DIR$line" ]]; then
             if [[ ! -d "$HOME${line%/*}" ]]; then mkdir $HOME${line%/*}; fi
-            cp $DIR$line $HOME${line%/*}
+            cp $CONFIG_DIR$line $HOME${line%/*}
             echo "OK: $line file imported."
-        elif [[ -d "$DIR$line" ]]; then
+        elif [[ -d "$CONFIG_DIR$line" ]]; then
             if [[ ! -d "$HOME$line" ]]; then mkdir $HOME$line; fi
-            cp $DIR$line/* $HOME$line
+            cp $CONFIG_DIR$line/* $HOME$line
             echo "OK: $line folder imported."
         else
             echo "FAIL: $line skipped. No such file or directory."

@@ -1,18 +1,18 @@
 #!/bin/bash
 
-DIR="$HOME/dotfiles"
-#HOST="t490s"
+BASE_DIR="$HOME/dotfiles/"
+CONFIG_DIR="$BASE_DIR/configs"
 
-input="$DIR/paths"
+input="$BASE_DIR/paths"
 while read line; do
     if [[ ! -z "${line// }" ]]; then
         if [[ -f "$HOME$line" ]]; then
-            if [[ ! -d "$DIR${line%/*}" ]]; then mkdir $DIR${line%/*}; fi
-            cp $HOME$line $DIR${line%/*}
+            if [[ ! -d "$CONFIG_DIR${line%/*}" ]]; then mkdir $CONFIG_DIR${line%/*}; fi
+            cp $HOME$line $CONFIG_DIR${line%/*}
             echo "OK: $line file copied."
         elif [[ -d "$HOME$line" ]]; then
-            if [[ ! -d "$DIR$line" ]]; then mkdir $DIR$line; fi
-            cp $HOME$line/* $DIR$line
+            if [[ ! -d "$CONFIG_DIR$line" ]]; then mkdir $CONFIG_DIR$line; fi
+            cp $HOME$line/* $CONFIG_DIR$line
             echo "OK: $line folder copied."
         else
             echo "FAIL: $line skipped. No such file or directory."
