@@ -4,6 +4,6 @@
 /.config/nvim/init.vim
 /.config/terminator/
 /.config/rofi/
-/.config/compton.conf
+/.config/picom.conf
 /.zshrc
 /.bashrc
