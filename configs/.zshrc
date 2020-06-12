@@ -68,7 +68,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,7 +103,8 @@ alias vim=nvim
 export PATH="$HOME/dotfiles:$HOME/bin/tools:$HOME/.local/bin:$PATH"
 export MFA_ARN="arn:aws:iam::802233477403:mfa/gabriele.orazi"
 export TERMINAL="terminator"
+export KUBE_EDITOR="nvim"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
-
 complete -o nospace -C /home/goemon/.local/bin/terraform terraform
+prompt_context(){}
