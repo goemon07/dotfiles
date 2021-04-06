@@ -99,12 +99,7 @@ alias zshconfig="vim ~/.zshrc; source ~/.zshrc"
 alias l='ls -lah --color=auto'
 alias i3config='vim $HOME/.config/i3/config'
 alias vim=nvim
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="$HOME/dotfiles:$HOME/bin/tools:$HOME/.local/bin:$PATH"
-export MFA_ARN="arn:aws:iam::802233477403:mfa/gabriele.orazi"
 export TERMINAL="terminator"
-export KUBE_EDITOR="nvim"
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/terraform terraform
-complete -o nospace -C /home/goemon/.local/bin/terraform terraform
 prompt_context(){}
