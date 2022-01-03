@@ -71,6 +71,8 @@ ZSH_THEME="agnoster"
 plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 # User configuration
 
@@ -98,8 +100,33 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="vim ~/.zshrc; source ~/.zshrc"
 alias l='ls -lah --color=auto'
 alias i3config='vim $HOME/.config/i3/config'
+alias firefox='MOZ_ENABLE_WAYLAND=1 firefox-developer-edition'
 alias vim=nvim
 export PATH="$HOME/dotfiles:$HOME/bin/tools:$HOME/.local/bin:$PATH"
 export TERMINAL="terminator"
+
+# GoLang variables
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=/home/goemon/golib
+export PATH=$PATH:$GOPATH/bin
+export GOPATH=$GOPATH:/home/goemon/gocode
+
 autoload -U +X bashcompinit && bashcompinit
-prompt_context(){}
+
+source /home/goemon/.config/broot/launcher/bash/br
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

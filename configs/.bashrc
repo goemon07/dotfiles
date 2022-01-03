@@ -12,3 +12,5 @@ PS1='[\u@\h \W]\$ '
 complete -C /usr/bin/terraform terraform
 
 complete -C /home/goemon/.local/bin/terraform terraform
+
+source /home/goemon/.config/broot/launcher/bash/br

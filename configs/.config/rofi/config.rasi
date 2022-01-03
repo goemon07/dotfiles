@@ -1,0 +1,8 @@
+/*
+  Rofi Custom Config
+  by Tuxy {2021-09-01}
+*/
+
+@theme "my-rofi.rasi"
+
+// EOF: ~/.config/rofi/custom.rasi
